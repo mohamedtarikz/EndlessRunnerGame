@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh8l88v07lgl6"]
+
+[ext_resource type="PackedScene" uid="uid://chflvubn0mrat" path="res://scenes/background.tscn" id="1_atwpb"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_bmwll"]
+[ext_resource type="PackedScene" uid="uid://cab0v7gumygi3" path="res://scenes/ground.tscn" id="2_lg4k6"]
+[ext_resource type="PackedScene" uid="uid://de0o5ajx43up" path="res://scenes/player.tscn" id="3_2gq60"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_bmwll")
+
+[node name="Background" parent="." instance=ExtResource("1_atwpb")]
+
+[node name="Ground" parent="." instance=ExtResource("2_lg4k6")]
+
+[node name="Player" parent="." instance=ExtResource("3_2gq60")]
+position = Vector2(112, 475)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
