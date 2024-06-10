@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cclju5gguywgu"]
+
+[ext_resource type="Script" path="res://Scripts/cactus_4.gd" id="1_3j56d"]
+[ext_resource type="PackedScene" uid="uid://cm30t1aoywp7f" path="res://scenes/cactus_obs.tscn" id="1_ocg3r"]
+
+[node name="Cactus_4" type="StaticBody2D"]
+scale = Vector2(1, 1.2)
+script = ExtResource("1_3j56d")
+
+[node name="CactusObs" parent="." instance=ExtResource("1_ocg3r")]
+
+[node name="CactusObs2" parent="." instance=ExtResource("1_ocg3r")]
+position = Vector2(117, 0)
+scale = Vector2(0.711656, 0.711656)
+
+[node name="CactusObs3" parent="." instance=ExtResource("1_ocg3r")]
+position = Vector2(251, 0)
+scale = Vector2(0.805303, 0.805303)
+
+[node name="CactusObs4" parent="." instance=ExtResource("1_ocg3r")]
+position = Vector2(386, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="CactusObs" to="." method="_on_cactus_obs_body_entered"]
+[connection signal="body_entered" from="CactusObs2" to="." method="_on_cactus_obs_2_body_entered"]
+[connection signal="body_entered" from="CactusObs3" to="." method="_on_cactus_obs_3_body_entered"]
+[connection signal="body_entered" from="CactusObs4" to="." method="_on_cactus_obs_4_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

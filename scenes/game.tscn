@@ -1,16 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh8l88v07lgl6"]
+[gd_scene load_steps=7 format=3 uid="uid://dh8l88v07lgl6"]
 
 [ext_resource type="PackedScene" uid="uid://chflvubn0mrat" path="res://scenes/background.tscn" id="1_atwpb"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_bmwll"]
 [ext_resource type="PackedScene" uid="uid://cab0v7gumygi3" path="res://scenes/ground.tscn" id="2_lg4k6"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="2_qfbmw"]
 [ext_resource type="PackedScene" uid="uid://de0o5ajx43up" path="res://scenes/player.tscn" id="3_2gq60"]
+[ext_resource type="Script" path="res://Scripts/Restart.gd" id="3_l5fnl"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_bmwll")
+metadata/_edit_horizontal_guides_ = [557.0]
+metadata/_edit_vertical_guides_ = [186.0, 501.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_qfbmw")
+theme_override_font_sizes/font_size = 48
+text = "Score: 0"
+
+[node name="start_col" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1151.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 0.376471)
+
+[node name="start" type="Label" parent="CanvasLayer"]
+offset_left = 249.0
+offset_top = 342.0
+offset_right = 861.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("2_qfbmw")
+theme_override_font_sizes/font_size = 48
+text = "Pess Space to Start"
+
+[node name="Lost" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 395.0
+offset_top = 281.0
+offset_right = 697.0
+offset_bottom = 348.0
+theme_override_fonts/font = ExtResource("2_qfbmw")
+theme_override_font_sizes/font_size = 52
+text = "You Lost!"
+
+[node name="Restart" type="Label" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+offset_left = 267.0
+offset_top = 340.0
+offset_right = 831.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("2_qfbmw")
+theme_override_font_sizes/font_size = 35
+text = "(Press Enter to Restart)"
+script = ExtResource("3_l5fnl")
 
 [node name="Background" parent="." instance=ExtResource("1_atwpb")]
 
 [node name="Ground" parent="." instance=ExtResource("2_lg4k6")]
+z_index = 1
 
 [node name="Player" parent="." instance=ExtResource("3_2gq60")]
 position = Vector2(112, 475)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://de0o5ajx43up"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gan8a"]
-[ext_resource type="Texture2D" uid="uid://c525jycvvecyd" path="res://Assets/img/mort.png" id="1_l0snj"]
+[ext_resource type="Texture2D" uid="uid://c525jycvvecyd" path="res://assets/img/mort.png" id="1_l0snj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d51q0"]
 atlas = ExtResource("1_l0snj")
@@ -158,7 +158,7 @@ script = ExtResource("1_gan8a")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dyr0q")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="stnd_v" type="CollisionShape2D" parent="."]
