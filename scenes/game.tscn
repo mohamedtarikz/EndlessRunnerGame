@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh8l88v07lgl6"]
+[gd_scene load_steps=8 format=3 uid="uid://dh8l88v07lgl6"]
 
 [ext_resource type="PackedScene" uid="uid://chflvubn0mrat" path="res://scenes/background.tscn" id="1_atwpb"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_bmwll"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="2_qfbmw"]
 [ext_resource type="PackedScene" uid="uid://de0o5ajx43up" path="res://scenes/player.tscn" id="3_2gq60"]
 [ext_resource type="Script" path="res://Scripts/Restart.gd" id="3_l5fnl"]
+[ext_resource type="PackedScene" uid="uid://e26yejw5rgy7" path="res://scenes/button.tscn" id="4_dnrc5"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_bmwll")
@@ -56,6 +57,13 @@ theme_override_fonts/font = ExtResource("2_qfbmw")
 theme_override_font_sizes/font_size = 35
 text = "(Press Enter to Restart)"
 script = ExtResource("3_l5fnl")
+
+[node name="Button" parent="CanvasLayer" instance=ExtResource("4_dnrc5")]
+visible = false
+offset_left = 421.0
+offset_top = 404.0
+offset_right = 622.0
+offset_bottom = 442.0
 
 [node name="Background" parent="." instance=ExtResource("1_atwpb")]
 

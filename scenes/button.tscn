@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://e26yejw5rgy7"]
+
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://assets/fonts/retro.ttf" id="1_irv4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp2ef"]
+bg_color = Color(0.281187, 0.281187, 0.281187, 0.227451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80640"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.870588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfid5"]
+bg_color = Color(0.597176, 0.597176, 0.597176, 0.913725)
+
+[node name="Button" type="Button"]
+process_mode = 2
+offset_right = 201.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("1_irv4c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp2ef")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80640")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rfid5")
+text = "Main Menu"
+metadata/_edit_vertical_guides_ = [201.0]
+metadata/_edit_horizontal_guides_ = [99.0]
