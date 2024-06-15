@@ -9,6 +9,8 @@ extends Node2D
 @onready var start_col = $CanvasLayer/start_col
 @onready var lost = $CanvasLayer/Lost
 @onready var restart = $CanvasLayer/Restart
+@onready var button = $CanvasLayer/Button
+@onready var game = $"."
 
 const CACTUS_1 = preload("res://scenes/cactus_1.tscn")
 const CACTUS_2 = preload("res://scenes/cactus_2.tscn")
@@ -76,15 +78,27 @@ func is_col(body):
 	if body.name == "Player":
 		game_over()
 
+signal high
 
 func game_over():
+	high.emit(score)
 	game_begin = 0
 	start_col.visible = 1
 	lost.visible = 1
 	get_tree().paused = 1
 	restart.visible = 1
+	button.visible = 1
 	restart.res.connect(strt)
+	button.pressed.connect(kil)
+
+signal res
 
 func strt():
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	res.emit()
+
+signal main
+
+func kil():
+	print("kill")
+	main.emit()
